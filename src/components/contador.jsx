@@ -54,10 +54,10 @@ const Countdown = ({ targetDate }) => {
             {/* Globos animados */}
             <div className="balloons-container">
                 <img src="/globo1.png" className="balloons" alt="Globo 1" />
-                <img src="./public/globo2.png" className="balloons" alt="Globo 2" />
-                <img src="./public/globo3.png" className="balloons" alt="Globo 3" />
-                <img src="./public/globo1.png" className="balloons" alt="Globo 4" />
-                <img src="./public/globo2.png" className="balloons" alt="Globo 5" />
+                <img src="/globo2.png" className="balloons" alt="Globo 2" />
+                <img src="/globo3.png" className="balloons" alt="Globo 3" />
+                <img src="/globo1.png" className="balloons" alt="Globo 4" />
+                <img src="/globo2.png" className="balloons" alt="Globo 5" />
             </div>
         </div>
     );
