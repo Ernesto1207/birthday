@@ -1,0 +1,166 @@
+/* Estilo general */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #87ceeb, #ffffff);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* Evita scroll si los globos salen de la pantalla */
+}
+
+.App {
+  text-align: center;
+}
+
+h1,
+h2,
+p {
+  color: #333;
+  margin: 10px 0;
+}
+
+.countdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  font-size: 5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  /* Espacio entre bloques */
+}
+
+.time-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #4caf50;
+  /* Color de fondo de los bloques */
+  border-radius: 10px;
+  padding: 10px 15px;
+  width: 80px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.time-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.time-label {
+  font-size: 1rem;
+  color: #f1f1f1;
+  text-transform: uppercase;
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 600px) {
+  .title {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    font-size: 2.5rem;
+    color: #333;
+  }
+
+  .time-block {
+    width: 60px;
+    padding: 8px 10px;
+  }
+
+  .time-number {
+    font-size: 2rem;
+  }
+
+  .time-label {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+/* Estilo y animación de los globos */
+.balloons {
+  position: fixed;
+  bottom: -150px;
+  /* Empieza fuera de la pantalla */
+  width: 100px;
+  animation: floatUp 5s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* Tamaños responsivos para los globos */
+.balloons:nth-child(1),
+.balloons:nth-child(2),
+.balloons:nth-child(3),
+.balloons:nth-child(4),
+.balloons:nth-child(5) {
+  width: 10vw;
+  /* Los globos ocupan el 10% del ancho de la ventana */
+  max-width: 120px;
+  /* Límite de tamaño máximo */
+  min-width: 50px;
+  /* Límite de tamaño mínimo */
+}
+
+/* Diferentes velocidades y posiciones */
+.balloons:nth-child(1) {
+  left: 10%;
+  animation-duration: 6s;
+}
+
+.balloons:nth-child(2) {
+  left: 30%;
+  animation-duration: 5.5s;
+}
+
+.balloons:nth-child(3) {
+  left: 50%;
+  animation-duration: 6.5s;
+}
+
+.balloons:nth-child(4) {
+  left: 70%;
+  animation-duration: 5.8s;
+}
+
+.balloons:nth-child(5) {
+  left: 90%;
+  animation-duration: 6.2s;
+}
+
+/* Animación para que los globos suban */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-120vh);
+    /* Los globos suben fuera de la pantalla */
+    opacity: 0.5;
+  }
+}
